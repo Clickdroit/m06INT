@@ -1,0 +1,71 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+
+__published:	// Composants gérés par l'EDI
+	TEdit *Edit1;
+	TButton *Rechercher;
+	TLabel *Label1;
+	TComboBox *ComboBox1;
+	TButton *Button1;
+	TShape *Shape2;
+	TShape *Shape1;
+	TBevel *Bevel1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TLabel *Label4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
+	TLabel *Label10;
+	TLabel *Label11;
+	TLabel *Label12;
+	TLabel *Label13;
+	TLabel *Label14;
+	TLabel *Label15;
+	TLabel *Label16;
+	TLabel *Label17;
+	TLabel *Label18;
+	TLabel *Label19;
+	TLabel *Label20;
+	TLabel *Label21;
+	TLabel *Label22;
+	TLabel *Label23;
+	TLabel *Label24;
+	TLabel *Label25;
+	TButton *Button2;
+	void __fastcall RechercherClick(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
+private:	// Déclarations utilisateur
+public:		// Déclarations utilisateur
+	__fastcall TForm1(TComponent* Owner);
+	unsigned int TForm1::ChaineHexaVersInt(char *chaineHexa, int nbCar){
+		int nombre=0,j;
+		char caractere;
+		for(j=0;j<nbCar;j++){
+			caractere=chaineHexa[j];
+			if(caractere>='0' && caractere<='9'){
+				nombre=nombre+((caractere-'0')<<(4*(nbCar-j-1)));
+			}
+		else nombre=nombre+((caractere-'A'+10)<<(4*(nbCar-j-1)));
+		}
+	return nombre;
+	}
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif
