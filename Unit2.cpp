@@ -42,5 +42,24 @@ void __fastcall TForm2::Label4Click(TObject *Sender)
 void __fastcall TForm2::Timer1Timer(TObject *Sender)
 {
 	Label5->Caption = Date() + Time();
+
+	TLabel  *labels[] = {Label1, Label2, Label3, Label4};
+	TImage  *images[] = {Image4, Image3, Image2, Image1};
+	TShape  *shapes[] = {Shape1, Shape3, Shape5, Shape7};
+
+	for (int i = 0; i < 4; i++) {
+		unsigned int adresse = Form1->ChaineHexaVersInt(
+			AnsiString(labels[i]->Caption).c_str(), 4);
+		if (Form1->sniffer.EnvoyerRequeteCapteur(adresse, 0x10)) {
+			unsigned char *reponse = Form1->sniffer.Reponse();
+			if (reponse[2] == 0) {
+				images[i]->Visible = false;
+				shapes[i]->Brush->Color = clGreen;
+			} else {
+				images[i]->Visible = true;
+				shapes[i]->Brush->Color = clRed;
+			}
+		}
+	}
 }
 //---------------------------------------------------------------------------
