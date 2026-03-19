@@ -10,7 +10,6 @@
 #pragma resource "*.dfm"
 #include "IRSnifferCirpark.h"
 TForm1 *Form1;
-IRSnifferCirpark sniffer;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
@@ -56,7 +55,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 
 	}else{
 		Shape2->Brush->Color = clRed;
-        Label17->Caption="Occupée";
+        Label17->Caption="Occupï¿½e";
 	}
 
 

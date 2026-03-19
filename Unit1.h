@@ -8,11 +8,12 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include "IRSnifferCirpark.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 
-__published:	// Composants gérés par l'EDI
+__published:	// Composants gï¿½rï¿½s par l'EDI
 	TEdit *Edit1;
 	TButton *Rechercher;
 	TLabel *Label1;
@@ -49,9 +50,10 @@ __published:	// Composants gérés par l'EDI
 	void __fastcall RechercherClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
-private:	// Déclarations utilisateur
-public:		// Déclarations utilisateur
+private:	// Dï¿½clarations utilisateur
+public:		// Dï¿½clarations utilisateur
 	__fastcall TForm1(TComponent* Owner);
+	IRSnifferCirpark sniffer;
 	unsigned int TForm1::ChaineHexaVersInt(char *chaineHexa, int nbCar){
 		int nombre=0,j;
 		char caractere;
