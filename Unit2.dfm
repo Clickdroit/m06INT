@@ -1485,4 +1485,9 @@ object Form2: TForm2
     Height = 15
     Caption = 'Date'
   end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 320
+    Top = 16
+  end
 end

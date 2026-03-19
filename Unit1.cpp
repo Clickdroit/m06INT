@@ -27,7 +27,8 @@ void __fastcall TForm1::RechercherClick(TObject *Sender)
 		ComboBox1->AddItem(sniffer.CapteursHexa(i).c_str(),this);
 	}
 	ComboBox1->ItemIndex=0;
-    Label1->Caption=(String)n+" capteurs";
+	Label1->Caption=(String)n+" capteurs";
+    Form2->Timer1->Enabled = true;
 }
 //---------------------------------------------------------------------------
 

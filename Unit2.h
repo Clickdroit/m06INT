@@ -34,10 +34,12 @@ __published:	// Composants gérés par l'EDI
 	TLabel *Label3;
 	TLabel *Label4;
 	TLabel *Label5;
+	TTimer *Timer1;
 	void __fastcall Label1Click(TObject *Sender);
 	void __fastcall Label2Click(TObject *Sender);
 	void __fastcall Label3Click(TObject *Sender);
 	void __fastcall Label4Click(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
 private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	__fastcall TForm2(TComponent* Owner);
