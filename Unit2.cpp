@@ -48,11 +48,10 @@ void __fastcall TForm2::Timer1Timer(TObject *Sender)
 	TShape  *shapes[] = {Shape1, Shape3, Shape5, Shape7};
 
 	for (int i = 0; i < 4; i++) {
-		unsigned int adresse = Form1->ChaineHexaVersInt(
-			AnsiString(labels[i]->Caption).c_str(), 4);
+		unsigned int adresse = Form1->ChaineHexaVersInt(AnsiString(labels[i]->Caption).c_str(), 4);
 		if (Form1->sniffer.EnvoyerRequeteCapteur(adresse, 0x10)) {
 			unsigned char *reponse = Form1->sniffer.Reponse();
-			if (reponse[2] == 0) {
+			if (reponse[2] == 1) {
 				images[i]->Visible = false;
 				shapes[i]->Brush->Color = clGreen;
 			} else {
